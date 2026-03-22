@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "lines": [
+        [
+            {
+                "id": "1",
+                "type": "model",
+                "color": "blue",
+                "bold": true,
+                "padding": 1
+            },
+            {
+                "id": "2",
+                "type": "context-percentage",
+                "color": "yellow",
+                "bold": true,
+                "rawValue": true,
+                "padding": 1
+            }
+        ],
+        [],
+        []
+    ],
+    "flexMode": "full-minus-40",
+    "compactThreshold": 60,
+    "colorLevel": 2,
+    "inheritSeparatorColors": false,
+    "globalBold": false,
+    "defaultSeparator": " ",
+    "powerline": {
+        "enabled": false,
+        "separators": [
+            ""
+        ],
+        "separatorInvertBackground": [
+            false
+        ],
+        "startCaps": [],
+        "endCaps": [],
+        "autoAlign": false
+    }
+}

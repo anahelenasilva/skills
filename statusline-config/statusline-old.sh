@@ -1,6 +1,9 @@
 #!/bin/sh
+
+# This is the old statusline script that I used to use. It is no longer used, but I'm keeping it here for reference.
 # Claude Code status line: model | cost | context % | duration
 input=$(cat)
+echo "$input" | jq '.' > /tmp/statusline-debug.json
 
 pct=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | awk '{printf "%.0f", $1}')
 used=$(echo "$input" | jq -r '((.context_window.total_input_tokens // 0) + (.context_window.total_output_tokens // 0))')
