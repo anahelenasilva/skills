@@ -4,18 +4,31 @@
         [
             {
                 "id": "1",
-                "type": "model",
-                "color": "blue",
+                "type": "context-length",
+                "color": "yellow",
                 "bold": true,
-                "padding": 1
+                "rawValue": true
             },
             {
                 "id": "2",
+                "type": "custom-text",
+                "customText": "(",
+                "color": "brightBlack",
+                "merge": "no-padding"
+            },
+            {
+                "id": "3",
                 "type": "context-percentage",
-                "color": "yellow",
-                "bold": true,
+                "color": "brightBlack",
                 "rawValue": true,
-                "padding": 1
+                "merge": "no-padding"
+            },
+            {
+                "id": "4",
+                "type": "custom-text",
+                "customText": ")",
+                "color": "brightBlack",
+                "merge": "no-padding"
             }
         ],
         [],
@@ -24,13 +37,13 @@
     "flexMode": "full-minus-40",
     "compactThreshold": 60,
     "colorLevel": 2,
+    "defaultSeparator": " ",
     "inheritSeparatorColors": false,
     "globalBold": false,
-    "defaultSeparator": " ",
     "powerline": {
         "enabled": false,
         "separators": [
-            ""
+            " "
         ],
         "separatorInvertBackground": [
             false
