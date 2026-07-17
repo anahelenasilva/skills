@@ -42,8 +42,8 @@ fi
 # Model
 model=$(echo "$input" | jq -r 'if .model | type == "object" then .model.display_name // .model.id // empty elif .model then .model else empty end')
 
-# Node version (cached to avoid running on every render)
-node_ver=$(node -v 2>/dev/null | sed 's/^v//')
+# Short session id (first 8 chars of the session UUID)
+session_short=$(echo "$input" | jq -r '.session_id // empty' | cut -c1-8)
 
 # Time waiting on API
 api_ms=$(echo "$input" | jq -r '.cost.total_api_duration_ms // empty')
@@ -89,10 +89,11 @@ if [ -n "$tokens_fmt" ]; then
   printf " ${DIM}|${RESET} %s" "$tokens_fmt"
 fi
 
+if [ -n "$session_short" ]; then
+  printf " ${DIM}|${RESET} ${DIM}%s${RESET}" "$session_short"
+fi
+
 if [ -n "$api_fmt" ]; then
   printf " ${DIM}|${RESET} api %s" "$api_fmt"
 fi
 
-if [ -n "$node_ver" ]; then
-  printf " ${DIM}|${RESET} node %s" "$node_ver"
-fi
